@@ -1,6 +1,6 @@
 <p align="center">
   <a>
-    <img src="https://raw.githubusercontent.com/mainsail-crew/docs/master/assets/img/logo.png" alt='Mainsail logo' height="152">
+    <img src="https://raw.githubusercontent.com/MOMENT3D/docs/master/assets/img/logo.png" alt='Mainsail logo' height="152">
     <h1 align="center">Mainsail</h1>
   </a>
 </p>
@@ -8,26 +8,26 @@
   Makes Klipper more accessible by adding a lightweight, responsive web user interface, centred around an intuitive and consistent design philosophy.
 </p>
 <p align="center">
-  <a aria-label="Downloads" href="https://github.com/mainsail-crew/mainsail/releases">
-    <img src="https://img.shields.io/github/downloads/mainsail-crew/mainsail/total?style=flat-square">
+  <a aria-label="Downloads" href="https://github.com/MOMENT3D/mainsail/releases">
+    <img src="https://img.shields.io/github/downloads/MOMENT3D/mainsail/total?style=flat-square">
   </a>
-  <a aria-label="Stars" href="https://github.com/mainsail-crew/mainsail/stargazers">
-    <img src="https://img.shields.io/github/stars/mainsail-crew/mainsail?style=flat-square">
+  <a aria-label="Stars" href="https://github.com/MOMENT3D/mainsail/stargazers">
+    <img src="https://img.shields.io/github/stars/MOMENT3D/mainsail?style=flat-square">
   </a>
-  <a aria-label="Forks" href="https://github.com/mainsail-crew/mainsail/network/members">
-    <img src="https://img.shields.io/github/forks/mainsail-crew/mainsail?style=flat-square">
+  <a aria-label="Forks" href="https://github.com/MOMENT3D/mainsail/network/members">
+    <img src="https://img.shields.io/github/forks/MOMENT3D/mainsail?style=flat-square">
   </a>
   <a href="https://hosted.weblate.org/engage/mainsail/">
     <img src="https://hosted.weblate.org/widget/mainsail/mainsail/svg-badge.svg" alt="Übersetzungsstatus" />
   </a>
-  <a aria-label="License" href="https://github.com/mainsail-crew/mainsail/blob/develop/LICENSE">
-    <img src="https://img.shields.io/github/license/mainsail-crew/mainsail?style=flat-square">
+  <a aria-label="License" href="https://github.com/MOMENT3D/mainsail/blob/develop/LICENSE">
+    <img src="https://img.shields.io/github/license/MOMENT3D/mainsail?style=flat-square">
   </a>
-  <a aria-label="Last commit" href="https://github.com/mainsail-crew/mainsail/commits/">
+  <a aria-label="Last commit" href="https://github.com/MOMENT3D/mainsail/commits/">
     <img src="https://img.shields.io/github/last-commit/meteyou/mainsail?style=flat-square">
   </a>
   <br />
-  <a aria-label="Size" href="https://github.com/mainsail-crew/mainsail/">
+  <a aria-label="Size" href="https://github.com/MOMENT3D/mainsail/">
     <img src="https://img.shields.io/github/repo-size/meteyou/mainsail?style=flat-square">
   </a>
   <a aria-label="Discord" href="https://discord.gg/skWTwTD">
@@ -48,12 +48,12 @@ out [more](https://docs.mainsail.xyz/setup#mymainsailxyz).
 ## Documentation
 
 Visit [docs.mainsail.xyz](https://docs.mainsail.xyz) to view the full documentation.  
-You can find the latest release notes [here](https://github.com/mainsail-crew/mainsail/releases).
+You can find the latest release notes [here](https://github.com/MOMENT3D/mainsail/releases).
 
 ## Screenshots
 
-![screenshot-dashboard](https://raw.githubusercontent.com/mainsail-crew/docs/master/assets/img/screenshot.png)
-![Features](https://raw.githubusercontent.com/mainsail-crew/docs/master/assets/img/features.png)
+![screenshot-dashboard](https://raw.githubusercontent.com/MOMENT3D/docs/master/assets/img/screenshot.png)
+![Features](https://raw.githubusercontent.com/MOMENT3D/docs/master/assets/img/features.png)
 
 ## Features
 
@@ -69,7 +69,7 @@ You can find the latest release notes [here](https://github.com/mainsail-crew/ma
 - **[Bed Mesh Visualisation](https://docs.mainsail.xyz/features/bedmesh):** _View your bed using a 3D mesh graph_
 - **G-Code Viewer:** _View a 3D render of your print and follow the progress_
 - **Multi-Webcam Support:** _View your print from different angles with multiple webcams_
-- **Timelapse Integration:** _Automatically record a timelapse of your print using [moonraker-timelapse](https://github.com/mainsail-crew/moonraker-timelapse)_
+- **Timelapse Integration:** _Automatically record a timelapse of your print using [moonraker-timelapse](https://github.com/MOMENT3D/moonraker-timelapse)_
 - **Power Control:** _Control power devices such as relays, TP-Link and Tasmota devices, and more_
 - **Powerful Macro-Management:** _Manage your macros on a micro level_
 - **[Configurable Dashboard](https://docs.mainsail.xyz/features/dashboard-organisation):** _Create your own personal dashboard_
@@ -82,12 +82,12 @@ You can find the latest release notes [here](https://github.com/mainsail-crew/ma
 Do you need help or just want to talk? Join our active community on [Discord](https://discord.gg/skWTwTD)!
 
 Did you find a bug or did you thought of a feature?
-Please create an [Issue](https://github.com/mainsail-crew/mainsail/issues) in GitHub and let us know.
+Please create an [Issue](https://github.com/MOMENT3D/mainsail/issues) in GitHub and let us know.
 
 ## Official Sponsors
 
 <p align='center'>
-    <img src="https://raw.githubusercontent.com/mainsail-crew/docs/master/assets/img/logo-bigtreetech.png" alt='Mainsail logo' width="150">
+    <img src="https://raw.githubusercontent.com/MOMENT3D/docs/master/assets/img/logo-bigtreetech.png" alt='Mainsail logo' width="150">
 </p>
 
 **BIGTREETECH** is the official mainboard partner of Mainsail. BIGTREETECH is committed to developing innovative and competitive products to better serve the 3D printing community.
@@ -110,7 +110,7 @@ Contributions to Mainsail are always welcome!
 
 Looking for a first issue to tackle?
 
-- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/mainsail-crew/mainsail/good%20first%20issue.svg)](https://github.com/mainsail-crew/mainsail/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
+- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/MOMENT3D/mainsail/good%20first%20issue.svg)](https://github.com/MOMENT3D/mainsail/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
 - [Talk to us](https://discord.gg/mainsail), we'll find something that suits your skills and learning interest.
 
 ## Credit, sources and inspiration

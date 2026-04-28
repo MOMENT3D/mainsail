@@ -21,8 +21,8 @@
   You can find more information about Conventional Commits here: https://www.conventionalcommits.org/en/v1.0.0/.
 
   Before submitting a Pull Request, please ensure you've done the following:
-  - 📖 Read the Mainsail Contributing Guidelines: https://github.com/mainsail-crew/mainsail/blob/HEAD/CONTRIBUTING.md#-submitting-a-pull-request-pr
-  - 📖 Read the Mainsail Code of Conduct: https://github.com/mainsail-crew/mainsail/blob/HEAD/.github/CODE_OF_CONDUCT.md
+  - 📖 Read the Mainsail Contributing Guidelines: https://github.com/MOMENT3D/mainsail/blob/HEAD/CONTRIBUTING.md#-submitting-a-pull-request-pr
+  - 📖 Read the Mainsail Code of Conduct: https://github.com/MOMENT3D/mainsail/blob/HEAD/.github/CODE_OF_CONDUCT.md
   - 👷‍♀️ Create small Pull Requests that only address one issue or feature
   - ✅ Provide tests for your changes
   - 📝 Use descriptive commit messages
