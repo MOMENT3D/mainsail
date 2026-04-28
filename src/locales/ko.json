@@ -142,17 +142,6 @@
         "ScrewName": "스크류 이름",
         "ScrewOutput": " {max} 중 {current} "
     },
-    "BedScrews": {
-        "Abort": "취소",
-        "Accept": "확인",
-        "Adjusted": "교정 완료",
-        "Description": "베드 레벨 교정이 끝났다면 <b>교정  완료</b>를 클릭하고, 교정없이 진행하려면 <b>확인</b>을 클릭해 주세요",
-        "Headline": "베드 스크류 교정",
-        "ScrewAccepted": "스크류 확인",
-        "ScrewIndex": "스크류 색인",
-        "ScrewName": "스크류 이름",
-        "ScrewOutput": " {max} 중 {current} "
-    },
     "Buttons": {
         "Cancel": "취소",
         "Close": "닫기",
