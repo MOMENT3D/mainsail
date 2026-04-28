@@ -1,79 +1,27 @@
 name: Release
 
-run-name: Release v${{ github.event.inputs.version }}
-
 on:
   workflow_dispatch:
     inputs:
       version:
         type: string
-        description: New version number in X.Y.Z
+        description: '새 버전 숫자 (예: 1.0.0)'
         required: true
 
 permissions:
   contents: write
 
 jobs:
-  push-version-number:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout develop branch
-        uses: actions/checkout@v6
-        with:
-          ref: 'develop'
-          token: ${{ secrets.PAT }}
-
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@main
-
-      - name: Push version number
-        if: steps.package-version.outputs.current-version != github.event.inputs.version
-        shell: bash
-        run: |
-          npm version --no-git-tag-version ${{ github.event.inputs.version }}
-
-      - name: git add & commit & push
-        if: steps.package-version.outputs.current-version != github.event.inputs.version
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: 'package.json package-lock.json'
-          default_author: github_actions
-          message: 'chore: push version number to v${{ github.event.inputs.version }}'
-          push: true
-
-  update-master-branch:
-    needs: ['push-version-number']
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout master
-        uses: actions/checkout@v6
+      - name: Checkout master branch
+        uses: actions/checkout@v4
         with:
           ref: 'master'
-          token: ${{ secrets.PAT }}
-          fetch-depth: 0
-
-      - name: Fast-forward merge from develop
-        shell: bash
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git merge --ff-only origin/develop
-          git push origin master
-
-  release:
-    needs: ['update-master-branch']
-    name: Build and release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch repo
-        uses: actions/checkout@v6
-        with:
-          ref: 'master'
-          fetch-depth: 0
 
       - name: Install node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -83,31 +31,23 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Move build out of dist
-        shell: bash
-        run: mv ./dist/mainsail.zip ./mainsail.zip
-
-      - name: Get latest tag
-        id: latest_tag
+      # 빌드 스크립트가 zip을 안 만들었을 경우를 대비해 직접 압축
+      - name: Zip build if not exists
         shell: bash
         run: |
-          echo "TAG_NAME=$(git describe --tags $(git rev-list --tags --max-count=1))" >> $GITHUB_OUTPUT
-
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@v4
-        id: generate-changelog
-        with:
-          config: ./cliff-release.toml
-          args: ${{ steps.latest_tag.outputs.TAG_NAME }}..HEAD
+          if [ ! -f ./mainsail.zip ]; then
+            cd dist && zip -r ../mainsail.zip . && cd ..
+          fi
 
       - name: Create release and upload build
         uses: softprops/action-gh-release@v2
-        id: create-release
         with:
           name: v${{ github.event.inputs.version }}
           tag_name: v${{ github.event.inputs.version }}
           files: ./mainsail.zip
-          body: ${{ steps.generate-changelog.outputs.content }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Copy remote configs to dist
         shell: bash

@@ -1,6 +1,6 @@
 {
     "name": "mainsail",
-    "version": "2.17.3",
+    "version": "2.17.0",
     "private": true,
     "type": "module",
     "decription": "a klipper web interface",
@@ -83,6 +83,7 @@
         "@vitejs/plugin-vue2": "^2.3.3",
         "@vue/eslint-config-typescript": "^12.0.0",
         "autoprefixer": "^10.4.2",
+        "bestzip": "^2.2.3",
         "cypress": "^14.2.0",
         "eslint": "^8.9.0",
         "eslint-config-prettier": "^9.0.0",
