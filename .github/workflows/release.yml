@@ -5,7 +5,7 @@ on:
     inputs:
       version:
         type: string
-        description: '새 버전 숫자 (예: 1.0.0)'
+        description: '버전 숫자 (예: 1.0.0)'
         required: true
 
 permissions:
@@ -31,8 +31,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 빌드 스크립트가 zip을 안 만들었을 경우를 대비해 직접 압축
-      - name: Zip build if not exists
+      # 빌드 후 mainsail.zip이 있는지 확인하고 없으면 여기서 직접 만듭니다
+      - name: Check or Create Zip
         shell: bash
         run: |
           if [ ! -f ./mainsail.zip ]; then
@@ -48,52 +48,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-      - name: Copy remote configs to dist
-        shell: bash
-        run: cp ./remote/* ./dist/
-
-      - name: Upload to remote server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.REMOTEHOST }}
-          username: ${{ secrets.REMOTEUSER }}
-          password: ${{ secrets.REMOTEPASSWORD }}
-          dangerous-clean-slate: true
-          exclude: .htaccess
-          local-dir: ./dist/
-
-  update-changelog:
-    needs: ['release']
-    name: Generate changelog
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          ref: 'develop'
-          fetch-depth: 0
-          token: ${{ secrets.PAT }}
-
-      - name: Get latest tag
-        id: latest_tag
-        shell: bash
-        run: |
-          echo "TAG_NAME=$(git describe --tags $(git rev-list --tags --max-count=1))" >> $GITHUB_OUTPUT
-
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@v4
-        id: git-cliff
-        with:
-          config: cliff.toml
-          args: v0.0.4..${{ steps.latest_tag.outputs.TAG_NAME }}
-        env:
-          OUTPUT: ${{ github.workspace }}/CHANGELOG.md
-
-      - name: Show CHANGELOG
-        run: |
-          cat CHANGELOG.md
-      - uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: 'docs(changelog): update changelog'
-          file_pattern: CHANGELOG.md
